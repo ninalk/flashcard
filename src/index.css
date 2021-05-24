@@ -5,6 +5,16 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* background-image: linear-gradient(rgb(231, 172, 127), rgb(233, 158, 136), rgb(235, 145, 147), rgb(234, 130, 156), rgb(241, 183, 198)); */
+  background-image: linear-gradient(rgb(92,151, 206), rgb(117, 158, 207), rgb(165, 177, 211), rgb(179, 184, 212), rgb(208, 193, 216), rgb(220, 199, 217), rgb(236, 204, 221));
+  /* background-color: rgb(233, 228, 213); 
+  background: repeating-linear-gradient(
+    to right,
+    rgb(233, 228, 213),
+    rgb(233, 228, 213) 10px,
+    rgb(211, 206, 192) 10px,
+    rgb(211, 206, 192) 20px 
+  ); */
 }
 
 code {

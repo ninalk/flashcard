@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './SignupPage.css';
 import ErrorMessage from '../../components/ErrorMessage/ErrorMessage';
 import { Button, Grid, Form, Segment, Header } from 'semantic-ui-react';
 import userService from '../../utils/userService';
@@ -37,9 +38,9 @@ export default function SignUpPage(props){
         <>
         <Grid textAlign='center' style={{ height: '100vh' }} verticalAlign='middle'>
           <Grid.Column style={{ maxWidth: 450 }}>
-              <Header as='h2' color='teal' textAlign='center'>
-                Flash Card App    
-              </Header>            
+                <Header as='h2' textAlign='center' className="signup-logo">
+                    <span className='logo-text'> FLASHED</span>
+                </Header>        
                 <Form autoComplete="off"  onSubmit={handleSubmit}>
                 <Segment>               
                     <Form.Input                    

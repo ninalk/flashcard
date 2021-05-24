@@ -36,3 +36,17 @@
     transform: rotate(360deg);
   }
 }
+
+.nav-bar {
+  background-color: rgb(105, 155, 209) !important;
+}
+
+.logo-text {
+  color: rgb(189, 230, 211);
+  font-family: 'Monoton', cursive;
+  font-size: 35px;
+}
+
+a {
+  color: rgb(189, 230, 211);
+}

@@ -39,7 +39,7 @@ export default function LoginPage(props){
                 <Grid.Column style={{ maxWidth: 450 }} >
                     <Form  autoComplete="off" onSubmit={handleSubmit} >                        
                         <Header as='h2' textAlign='center' className="signup-logo">
-                            <span className='logo-text'> Flash Card App</span>
+                            <span className='logo-text'> FLASHED</span>
                         </Header>
                         <Segment stacked>
                             <Form.Input
@@ -59,7 +59,7 @@ export default function LoginPage(props){
                             required
                             />
                         <Button
-                            color='teal'
+                            color='black'
                             fluid size='large'
                             type="submit"
                             className="btn"
