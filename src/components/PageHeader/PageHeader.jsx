@@ -9,16 +9,26 @@ export default function PageHeader({ user, handleLogout }){
     return (
         <Segment clearing className="nav-bar">
             <Header as='h3' className='logo' floated='left'>
-                <Link to="/" className='logo-text'> flashed</Link>
+                <Link to="/" className='logo-text'>
+                    <span className='logo-text'> 
+                        <span className='pink'>F</span>
+                        <span className='green'>L</span>
+                        <span className='yellow'>A</span>
+                        <span className='blue'>S</span>
+                        <span className='orange'>H</span>
+                        <span className='pink'>E</span>
+                        <span className='green'>D</span>
+                    </span>
+                </Link>
             </Header>
-            <Header as='h3' floated='right'>
-                <Link to='' onClick={handleLogout}><Icon className="lock"></Icon>Logout</Link>
+            <Header as='h3' floated='right' className='nav-bar-link'>
+                <Link to='' onClick={handleLogout}>LOGOUT</Link>
             </Header>              
-            <Header as='h3' floated='right'>
-                <Link to='/new'><Icon className="add"></Icon>Create</Link>
+            <Header as='h3' floated='right' className='nav-bar-link'>
+                <Link to='/new'>CREATE</Link>
             </Header> 
-            <Header as='h3' floated='right'>
-                <Link to={`/${user.username}`}><Icon className="user circle outline"></Icon>My Profile</Link>          
+            <Header as='h3' floated='right' className='nav-bar-link'>
+                <Link to={`/${user.username}`}>MY CARDS</Link>          
             </Header>       
         </Segment>
     )

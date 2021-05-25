@@ -38,15 +38,24 @@
 }
 
 .nav-bar {
-  background-color: rgb(105, 155, 209) !important;
+  background-color: rgb(252, 247, 241) !important;
 }
 
 .logo-text {
-  color: rgb(189, 230, 211);
-  font-family: 'Monoton', cursive;
-  font-size: 35px;
+  font-family: 'Odibee Sans', cursive;
+  font-size: 46px;
 }
 
 a {
-  color: rgb(189, 230, 211);
+  color: rgb(34, 31, 31);
+}
+
+.logo {
+  margin-bottom: 0 !important;
+}
+
+.nav-bar-link {
+  margin-bottom: 0 !important;
+  font-size: 20px !important;
+  font-family: 'Odibee Sans', cursive !important;
 }

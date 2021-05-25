@@ -39,7 +39,15 @@ export default function LoginPage(props){
                 <Grid.Column style={{ maxWidth: 450 }} >
                     <Form  autoComplete="off" onSubmit={handleSubmit} >                        
                         <Header as='h2' textAlign='center' className="signup-logo">
-                            <span className='logo-text'> FLASHED</span>
+                            <span className='logo-text'> 
+                                <span className='pink'>F</span>
+                                <span className='green'>L</span>
+                                <span className='yellow'>A</span>
+                                <span className='blue'>S</span>
+                                <span className='orange'>H</span>
+                                <span className='pink'>E</span>
+                                <span className='green'>D</span>
+                            </span>
                         </Header>
                         <Segment stacked>
                             <Form.Input
@@ -59,7 +67,7 @@ export default function LoginPage(props){
                             required
                             />
                         <Button
-                            color='black'
+                            color='teal'
                             fluid size='large'
                             type="submit"
                             className="btn"

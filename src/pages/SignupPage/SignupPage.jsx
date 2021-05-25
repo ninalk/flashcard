@@ -38,9 +38,17 @@ export default function SignUpPage(props){
         <>
         <Grid textAlign='center' style={{ height: '100vh' }} verticalAlign='middle'>
           <Grid.Column style={{ maxWidth: 450 }}>
-                <Header as='h2' textAlign='center' className="signup-logo">
-                    <span className='logo-text'> FLASHED</span>
-                </Header>        
+              <Header as='h2' textAlign='center' className="signup-logo">
+                  <span className='logo-text'> 
+                      <span className='pink'>F</span>
+                      <span className='green'>L</span>
+                      <span className='yellow'>A</span>
+                      <span className='blue'>S</span>
+                      <span className='orange'>H</span>
+                      <span className='pink'>E</span>
+                      <span className='green'>D</span>
+                  </span>
+              </Header>        
                 <Form autoComplete="off"  onSubmit={handleSubmit}>
                 <Segment>               
                     <Form.Input                    
