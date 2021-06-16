@@ -67,7 +67,7 @@ export default function LoginPage(props){
                             required
                             />
                         <Button
-                            color='teal'
+                            color='olive'
                             fluid size='large'
                             type="submit"
                             className="btn"
@@ -76,7 +76,7 @@ export default function LoginPage(props){
                             Login
                         </Button>
                         <Message>
-                            New to us? <Link to='/signup'>&nbsp;Sign Up</Link>
+                            New to us? <Link to='/signup'>&nbsp;<span className='blue'>Sign Up</span></Link>
                         </Message>
                         </Segment>
                     </Form>

@@ -4,6 +4,7 @@ import './App.css';
 import SignupPage from '../SignupPage/SignupPage';
 import LoginPage from '../LoginPage/LoginPage';
 import HomePage from '../HomePage/HomePage';
+import ProfilePage from '../ProfilePage/ProfilePage';
 import userService from '../../utils/userService'
 
 
@@ -36,6 +37,9 @@ function App() {
              <Switch>
                 <Route exact path="/">
                     <HomePage user={user} handleLogout={handleLogout}/>
+                </Route>
+                <Route exact path="/:username">
+                    <ProfilePage user={user} handleLogout={handleLogout} handleSignUpOrLogin={handleSignUpOrLogin}/>
                 </Route>
             </Switch>
             </>

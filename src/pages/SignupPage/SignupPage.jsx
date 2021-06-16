@@ -83,6 +83,7 @@ export default function SignUpPage(props){
                       required
                     />
                     <Button
+                      color="olive"
                       type="submit"
                       className="btn"
                     //   disabled={invalidForm}
