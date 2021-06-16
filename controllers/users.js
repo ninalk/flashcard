@@ -1,11 +1,24 @@
 const User = require('../models/user');
+const Card = require('../models/card');
 const jwt = require('jsonwebtoken');
 const SECRET = process.env.SECRET;
 
 module.exports = {
   signup,
-  login
+  login,
+  profile
 };
+
+async function profile(req, res) {
+  try {
+    const user = await User.findOne({username: req.params.username})
+    const cards = await Card.find({user: user._id});
+    res.status(200).json({cards: cards, user: user})
+  } catch(err){
+    console.log(err)
+    res.send({err})
+  }
+}
 
 async function signup(req, res) {
   console.log(req.body)

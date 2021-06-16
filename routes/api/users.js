@@ -7,7 +7,7 @@ router.post('/signup', usersCtrl.signup);
 router.post('/login', usersCtrl.login);
 
 /*---------- Protected Routes ----------*/
-
+router.get('/:username', usersCtrl.profile);
 
 
 
