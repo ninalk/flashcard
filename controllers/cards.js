@@ -1,7 +1,17 @@
 const Card = require('../models/card');
 
 module.exports = {
-    create
+    create,
+    index
+}
+
+async function index(req, res) {
+    try {
+        const cards = await Card.find({}).populate('user').exec();
+        res.status(200).json({cards});
+    } catch(err){
+        res.json(err)
+    }
 }
 
 async function create(req, res) {

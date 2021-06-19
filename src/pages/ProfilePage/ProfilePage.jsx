@@ -30,6 +30,7 @@ export default function ProfilePage({ user, handleSignUpOrLogin, handleLogout })
         try {
             const data = await cardsAPI.create(card);
             console.log(data, ' this is the card data')
+            setCards(cards => [data.card, ...cards])
         } catch(err) {
             console.log(err)
         }
