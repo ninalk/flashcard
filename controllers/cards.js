@@ -5,12 +5,12 @@ module.exports = {
 }
 
 async function create(req, res) {
+    console.log(req.body, ' req.body')
     try {
         const card = await Card.create({
             category: req.body.category,
             question: req.body.question,
             answer: req.body.answer,
-            rightOrWrong: req.body.rightOrWrong,
             user: req.user
         });
 
