@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import userService from '../../utils/userService';
 import * as cardsAPI from '../../utils/card-api';
-import { Grid, Loader, Divider } from 'semantic-ui-react'
+import { Grid, Loader } from 'semantic-ui-react'
 import PageHeader from '../../components/PageHeader/PageHeader';
 import AddCardForm from '../../components/AddCardForm/AddCardForm';
 import CardFeed from '../../components/CardFeed/CardFeed';
@@ -36,9 +36,19 @@ export default function ProfilePage({ user, handleSignUpOrLogin, handleLogout })
         }
     }
 
+    async function getCards() {
+        try {
+            const data = await cardsAPI.getAll();
+            setCards([...data.cards])
+        } catch(err) {
+            console.log(err)
+        }
+    }
+
     useEffect(() => {
         console.log('heerrreee')
         getProfile();
+        getCards();
     }, [user, location.pathname])
 
 
@@ -64,7 +74,7 @@ export default function ProfilePage({ user, handleSignUpOrLogin, handleLogout })
                     </Grid.Row>
                     <Grid.Row>
                         <Grid.Column>
-                            <CardFeed />
+                            <CardFeed cards={cards} />
                         </Grid.Column>
                     </Grid.Row>
                 </Grid>

@@ -3,7 +3,7 @@ import './LoginPage.css';
 import ErrorMessage from '../../components/ErrorMessage/ErrorMessage'
 import userService from '../../utils/userService';
 import { useHistory, Link } from 'react-router-dom';
-import { Button, Form, Grid, Header, Message, Segment, Image } from 'semantic-ui-react';
+import { Button, Form, Grid, Header, Message, Segment } from 'semantic-ui-react';
 
 
 export default function LoginPage(props){

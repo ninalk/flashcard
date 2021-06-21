@@ -19,6 +19,11 @@ export default function AddCardForm({ handleAddCard }) {
         e.preventDefault();
 
         handleAddCard(state);
+        setState({
+            category: '',
+            question: '',
+            answer: ''
+        })
     }
 
     return (
@@ -54,7 +59,7 @@ export default function AddCardForm({ handleAddCard }) {
                     type="submit"
                     className="btn"
                 >
-                    ADD FLASHCARD
+                    ADD CARD
                 </Button>
                 </Form>
             </Segment>
