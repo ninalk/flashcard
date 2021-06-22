@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Carousel.css';
+import { useSwipeable } from 'react-swipeable';
 import FlashCard from '../FlashCard/FlashCard';
 import { Card } from 'semantic-ui-react';
 
@@ -24,8 +25,13 @@ export default function Carousel({ children }) {
         setActiveIndex(newIndex);
     }
 
+    const handlers = useSwipeable({
+        onSwipedLeft: () => updateIndex(activeIndex + 1),
+        onSwipedRight: () => updateIndex(activeIndex - 1)
+    });
+    
     return (
-        <div className='carousel'>
+        <div {...handlers} className='carousel'>
             <div className='inner' style={{ transform: `translateX(-${activeIndex * 100}%)` }}>
                 {React.Children.map(children, (child, index) => {
                     return React.cloneElement(child, { width: '100%'});
