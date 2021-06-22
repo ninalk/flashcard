@@ -5,7 +5,7 @@ import { Card, Button } from 'semantic-ui-react';
 export default function FlashCard({ card }) {
 
     return (
-        <Card key={card._id}>
+        <Card key={card._id} >
             <Card.Content>
                 <Card.Header>Q: {card.question}</Card.Header>
                 {/* <Card.Meta>{card.category}</Card.Meta> */}
