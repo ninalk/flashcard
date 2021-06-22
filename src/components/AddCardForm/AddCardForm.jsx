@@ -27,7 +27,7 @@ export default function AddCardForm({ handleAddCard }) {
     }
 
     return (
-        <Grid textAlign='center' style={{ height: '25vh' }} verticalAlign='middle'>
+        <Grid textAlign='center'>
             <Grid.Column style={{ maxWidth: 450 }}>
             <Segment>           
                 <Form  autoComplete="off" onSubmit={handleSubmit}>                

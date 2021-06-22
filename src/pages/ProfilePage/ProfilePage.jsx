@@ -5,6 +5,7 @@ import { Grid, Loader } from 'semantic-ui-react'
 import PageHeader from '../../components/PageHeader/PageHeader';
 import AddCardForm from '../../components/AddCardForm/AddCardForm';
 import CardFeed from '../../components/CardFeed/CardFeed';
+import Carousel, { CarouselItem } from '../../components/Carousel/Carousel';
 import {useLocation} from 'react-router-dom';
 
 export default function ProfilePage({ user, handleSignUpOrLogin, handleLogout }) {
@@ -61,20 +62,25 @@ export default function ProfilePage({ user, handleSignUpOrLogin, handleLogout })
                     </Grid.Column>                 
                 </Grid>
                 :
-                <Grid>
+                <Grid centered>
                     <Grid.Row>
                         <Grid.Column>
                             <PageHeader profileUser={profileUser} user={user} handleLogout={handleLogout}/>
                         </Grid.Column>
                     </Grid.Row>
                     <Grid.Row>
-                        <Grid.Column>
+                        <Grid.Column style={{ maxWidth: 450}}>
                             <AddCardForm handleAddCard={handleAddCard} />
                         </Grid.Column>
                     </Grid.Row>
                     <Grid.Row>
                         <Grid.Column>
-                            <CardFeed cards={cards} />
+                            {/* <CardFeed cards={cards} /> */}
+                            <Carousel cards={cards}>
+                                <CarouselItem>Item 1</CarouselItem>
+                                <CarouselItem>Item 2</CarouselItem>
+                                <CarouselItem>Item 3</CarouselItem>
+                            </Carousel>
                         </Grid.Column>
                     </Grid.Row>
                 </Grid>
