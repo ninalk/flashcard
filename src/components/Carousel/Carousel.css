@@ -1,5 +1,7 @@
 .carousel {
     overflow: hidden;
+    max-width: 420px;
+    margin: 0 auto;
 }
 
 .inner {
@@ -11,9 +13,9 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    height: 200px;
-    background-color: green;
-    color: #fff;
+    height: 280px;
+    background-color: rgb(223, 223, 223);
+    color: black;
 }
 
 .indicators {
@@ -27,5 +29,5 @@
 
 .indicators > button.active {
     background-color: green;
-    color: #fff;
+    color: black;
 }

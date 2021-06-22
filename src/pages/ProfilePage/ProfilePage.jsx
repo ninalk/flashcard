@@ -4,7 +4,7 @@ import * as cardsAPI from '../../utils/card-api';
 import { Grid, Loader } from 'semantic-ui-react'
 import PageHeader from '../../components/PageHeader/PageHeader';
 import AddCardForm from '../../components/AddCardForm/AddCardForm';
-import CardFeed from '../../components/CardFeed/CardFeed';
+import FlashCard from '../../components/FlashCard/FlashCard';
 import Carousel, { CarouselItem } from '../../components/Carousel/Carousel';
 import {useLocation} from 'react-router-dom';
 
@@ -47,7 +47,6 @@ export default function ProfilePage({ user, handleSignUpOrLogin, handleLogout })
     }
 
     useEffect(() => {
-        console.log('heerrreee')
         getProfile();
         getCards();
     }, [user, location.pathname])
@@ -77,9 +76,17 @@ export default function ProfilePage({ user, handleSignUpOrLogin, handleLogout })
                         <Grid.Column>
                             {/* <CardFeed cards={cards} /> */}
                             <Carousel cards={cards}>
-                                <CarouselItem>Item 1</CarouselItem>
-                                <CarouselItem>Item 2</CarouselItem>
-                                <CarouselItem>Item 3</CarouselItem>
+                                {cards.map((card) => {
+                                    return (
+                                        <CarouselItem>
+                                            <FlashCard 
+                                                card={card}
+                                                key={card._id}
+                                                style={{ width: '100%' }}
+                                            />
+                                        </CarouselItem>
+                                    )
+                                })}
                             </Carousel>
                         </Grid.Column>
                     </Grid.Row>
