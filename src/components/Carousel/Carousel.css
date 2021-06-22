@@ -14,8 +14,6 @@
     align-items: center;
     justify-content: center;
     height: 280px;
-    background-color: rgb(223, 223, 223);
-    color: black;
 }
 
 .indicators {
@@ -27,7 +25,46 @@
     margin: 5px;
 }
 
-.indicators > button.active {
+/* .indicators > button.active {
     background-color: green;
     color: black;
+} */
+
+.chevron-left, .chevron-right {
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+    transform: scale(var(--ggs,1));
+    width: 22px;
+    height: 22px;
+    border: 2px solid transparent;
+    border-radius: 100px
+}
+
+.chevron-left::after {
+    content: "";
+    display: block;
+    box-sizing: border-box;
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-bottom: 2px solid;
+    border-left: 2px solid;
+    transform: rotate(45deg);
+    left: 6px;
+    top: 4px
+}
+
+.chevron-right::after {
+    content: "";
+    display: block;
+    box-sizing: border-box;
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-bottom: 2px solid;
+    border-left: 2px solid;
+    transform: rotate(225deg);
+    right: 6px;
+    top: 4px
 }

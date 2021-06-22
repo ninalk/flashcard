@@ -1,25 +1,30 @@
 import React from 'react';
-import { Card, Button } from 'semantic-ui-react';
+import './FlashCard.css';
+import { Card, Button, Divider } from 'semantic-ui-react';
 
 
 export default function FlashCard({ card }) {
 
     return (
-        <Card key={card._id} >
-            <Card.Content>
-                <Card.Header>Q: {card.question}</Card.Header>
+        <Card key={card._id} className='flash-card'>
+            <Card.Content className='card-content'>
+                <Card.Header as='h1'>Q: {card.question}</Card.Header>
                 {/* <Card.Meta>{card.category}</Card.Meta> */}
+                <Divider></Divider>
                 <Card.Description>
                     A: {card.answer}
                 </Card.Description>
             </Card.Content>
             <Card.Content extra>
-                <div className='ui two buttons'>
-                    <Button basic color='green'>
-                        Correct
+                <div className='ui three buttons'>
+                    <Button className='answer-btn'>
+                        Answer
                     </Button>
-                    <Button basic color='red'>
-                        Wrong
+                    <Button className='edit-btn'>
+                        Edit
+                    </Button>
+                    <Button className='delete-btn'>
+                        Delete
                     </Button>
                 </div>
             </Card.Content>

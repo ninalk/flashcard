@@ -40,10 +40,10 @@ export default function Carousel({ children }) {
                     onClick={() => {
                         updateIndex(activeIndex - 1);
                     }}
+                    className='chevron-left'
                 >
-                    Prev
                 </button>
-                {React.Children.map(children, (child, index) => {
+                {/* {React.Children.map(children, (child, index) => {
                     return (
                         <button
                             className={`${index === activeIndex ? 'active' : ''}`}
@@ -54,13 +54,13 @@ export default function Carousel({ children }) {
                             {index + 1}
                         </button>
                     );
-                })}
+                })} */}
                 <button
                     onClick={() => {
                         updateIndex(activeIndex + 1);
                     }}
+                    className='chevron-right'
                 >
-                    Next
                 </button>
             </div>
         </div>

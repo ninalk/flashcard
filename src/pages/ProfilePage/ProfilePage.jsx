@@ -74,15 +74,13 @@ export default function ProfilePage({ user, handleSignUpOrLogin, handleLogout })
                     </Grid.Row>
                     <Grid.Row>
                         <Grid.Column>
-                            {/* <CardFeed cards={cards} /> */}
                             <Carousel cards={cards}>
-                                {cards.map((card) => {
+                                {cards.map((card, index) => {
                                     return (
-                                        <CarouselItem>
+                                        <CarouselItem key={index} >
                                             <FlashCard 
                                                 card={card}
-                                                key={card._id}
-                                                style={{ width: '100%' }}
+                                                key={card._id}          
                                             />
                                         </CarouselItem>
                                     )

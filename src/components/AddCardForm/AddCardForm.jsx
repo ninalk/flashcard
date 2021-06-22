@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './AddCardForm.css';
 import { Button, Form, Grid, Segment } from 'semantic-ui-react';
 
 export default function AddCardForm({ handleAddCard }) {

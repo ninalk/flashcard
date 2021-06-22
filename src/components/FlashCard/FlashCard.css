@@ -1,0 +1,27 @@
+.flash-card {
+    width: inherit !important;
+    height: 100%;
+    border-radius: 0 !important;
+}
+
+.card-content {
+    padding: 2em 2em !important;
+}
+
+.answer-btn {
+    color: rgb(94, 145, 75) !important;
+    border: 2px solid rgb(94, 145, 75) !important;
+    background-color: white !important;
+}
+
+.edit-btn {
+    color: rgb(244, 210, 93) !important;
+    border: 2px solid rgb(244, 210, 93) !important;
+    background-color: white !important;
+}
+
+.delete-btn {
+    color: rgb(232, 126, 60) !important;
+    border: 2px solid rgb(232, 126, 60) !important;
+    background-color: white !important;
+}
