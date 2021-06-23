@@ -33,3 +33,17 @@ export function deleteOne(cardId) {
     .then(res => res.text())
     .then(text => console.log(text))
 }
+
+export function editCard(cardId, card) {
+    console.log(card, cardId, ' this is the card to edit')
+    return fetch(BASE_URL + `/${cardId}`, {
+        method: 'PUT',
+        body: JSON.stringify(card),
+        headers: {
+            'Authorization': 'Bearer ' + tokenService.getToken(),
+            'Content-Type': 'application/json'
+        }
+    })
+    .then(res => res.text())
+    .then(text => console.log(text))
+}

@@ -13,7 +13,6 @@ export default function ProfilePage({ user, handleSignUpOrLogin, handleLogout })
     const [cards, setCards] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState('');
-    const history = useHistory();
     const location = useLocation();
 
     async function getProfile(){
@@ -30,7 +29,6 @@ export default function ProfilePage({ user, handleSignUpOrLogin, handleLogout })
     async function handleAddCard(card) {
         try {
             const data = await cardsAPI.create(card);
-            console.log(data, ' this is the card data')
             setCards(cards => [data.card, ...cards])
         } catch(err) {
             console.log(err)
@@ -46,21 +44,33 @@ export default function ProfilePage({ user, handleSignUpOrLogin, handleLogout })
         }
     }
 
-    useEffect(() => {
-        getProfile();
-        getCards();
-    }, [user, location.pathname])
-
+    
     async function removeCard(cardId) {
         try {
             const data = await cardsAPI.deleteOne(cardId);
             console.log(data, ' response from deleteOne')
-            getProfile();
         } catch(err) {
             console.log(err)
         }
     }
 
+    async function updateCard(card) {
+        console.log(card, ' card in updateCard')
+        try {
+            const cardId = card._id;
+            const data = await cardsAPI.editCard(cardId, card);
+            setCards(data.card);
+            console.log(data, ' response from editCard')
+        } catch(err) {
+            console.log(err)
+        }
+    }
+    
+    useEffect(() => {
+        getProfile();
+        getCards();
+    }, [user, location.pathname])
+    
     return (
         <>
             { loading ?
@@ -83,14 +93,23 @@ export default function ProfilePage({ user, handleSignUpOrLogin, handleLogout })
                     </Grid.Row>
                     <Grid.Row>
                         <Grid.Column>
-                            <Carousel cards={cards} removeCard={removeCard}>
+                            <Carousel 
+                                cards={cards} 
+                                removeCard={removeCard}
+                                updateCard={updateCard}
+                            >
                                 {cards.map((card, index) => {
                                     return (
-                                        <CarouselItem key={index} removeCard={removeCard}>
+                                        <CarouselItem 
+                                            key={index} 
+                                            removeCard={removeCard}
+                                            updateCard={updateCard}
+                                        >
                                             <FlashCard 
                                                 card={card}
                                                 key={card._id}
-                                                removeCard={removeCard}          
+                                                removeCard={removeCard}
+                                                updateCard={updateCard}          
                                             />
                                         </CarouselItem>
                                     )

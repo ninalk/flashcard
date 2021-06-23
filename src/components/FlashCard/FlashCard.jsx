@@ -2,9 +2,10 @@ import React from 'react';
 import './FlashCard.css';
 import { Card, Button, Divider } from 'semantic-ui-react';
 import RemoveCardButton from '../RemoveCardButton/RemoveCardButton';
+import EditCardButton from '../EditCardButton/EditCardButton';
 
 
-export default function FlashCard({ card, removeCard }) {
+export default function FlashCard({ card, removeCard, updateCard }) {
 
     return (
         <Card key={card._id} className='flash-card'>
@@ -21,9 +22,11 @@ export default function FlashCard({ card, removeCard }) {
                     <Button className='answer-btn'>
                         Answer
                     </Button>
-                    <Button className='edit-btn'>
-                        Edit
-                    </Button>
+                    <EditCardButton 
+                        className='edit-btn'
+                        updateCard={updateCard}
+                        card={card}
+                    />
                     <RemoveCardButton 
                         className='delete-btn' 
                         removeCard={removeCard} 

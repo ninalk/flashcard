@@ -10,7 +10,7 @@ export const CarouselItem = ({children, width}) => {
     )
 }
 
-export default function Carousel({ children, removeCard }) {
+export default function Carousel({ children, removeCard, updateCard }) {
     const [activeIndex, setActiveIndex] = useState(0);
 
     const updateIndex = (newIndex) => {

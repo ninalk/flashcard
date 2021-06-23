@@ -3,7 +3,23 @@ const Card = require('../models/card');
 module.exports = {
     create,
     index,
-    deleteCard
+    deleteCard,
+    update
+}
+
+async function update(req, res) {
+    console.log(req.body, req.params.id, ' update in controller')
+    try {
+        const card = await Card.findById(req.params.id);
+        card.category = req.body.category;
+        card.question = req.body.question;
+        card.answer = req.body.answer;
+        await card.save();
+        res.status(200).json({card: card})
+    } catch(err) {
+        console.log(err)
+        res.send({err})
+    }
 }
 
 async function deleteCard(req, res) {

@@ -24,7 +24,7 @@ export default function RemoveCardButton({ removeCard, card }) {
                 <p>Are you sure you want to delete this flashcard?</p>
             </Modal.Content>
             <Modal.Actions>
-                <Button basic color='red' inverted onClick={() => setOpen(false)}>
+                <Button basic inverted onClick={() => setOpen(false)}>
                     <Icon name='remove' /> No
                 </Button>
                 <Button color='green' inverted onClick={() => {setOpen(false); handleDeleteClick();}} >
