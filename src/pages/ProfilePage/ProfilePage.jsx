@@ -6,14 +6,14 @@ import PageHeader from '../../components/PageHeader/PageHeader';
 import AddCardForm from '../../components/AddCardForm/AddCardForm';
 import FlashCard from '../../components/FlashCard/FlashCard';
 import Carousel, { CarouselItem } from '../../components/Carousel/Carousel';
-import {useLocation} from 'react-router-dom';
+import { useLocation, useHistory } from 'react-router-dom';
 
 export default function ProfilePage({ user, handleSignUpOrLogin, handleLogout }) {
     const [profileUser, setProfileUser] = useState({});
     const [cards, setCards] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState('');
-
+    const history = useHistory();
     const location = useLocation();
 
     async function getProfile(){
@@ -51,6 +51,15 @@ export default function ProfilePage({ user, handleSignUpOrLogin, handleLogout })
         getCards();
     }, [user, location.pathname])
 
+    async function removeCard(cardId) {
+        try {
+            const data = await cardsAPI.deleteOne(cardId);
+            console.log(data, ' response from deleteOne')
+            getProfile();
+        } catch(err) {
+            console.log(err)
+        }
+    }
 
     return (
         <>
@@ -74,13 +83,14 @@ export default function ProfilePage({ user, handleSignUpOrLogin, handleLogout })
                     </Grid.Row>
                     <Grid.Row>
                         <Grid.Column>
-                            <Carousel cards={cards}>
+                            <Carousel cards={cards} removeCard={removeCard}>
                                 {cards.map((card, index) => {
                                     return (
-                                        <CarouselItem key={index} >
+                                        <CarouselItem key={index} removeCard={removeCard}>
                                             <FlashCard 
                                                 card={card}
-                                                key={card._id}          
+                                                key={card._id}
+                                                removeCard={removeCard}          
                                             />
                                         </CarouselItem>
                                     )

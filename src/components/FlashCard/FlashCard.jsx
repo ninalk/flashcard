@@ -1,9 +1,10 @@
 import React from 'react';
 import './FlashCard.css';
 import { Card, Button, Divider } from 'semantic-ui-react';
+import RemoveCardButton from '../RemoveCardButton/RemoveCardButton';
 
 
-export default function FlashCard({ card }) {
+export default function FlashCard({ card, removeCard }) {
 
     return (
         <Card key={card._id} className='flash-card'>
@@ -23,9 +24,11 @@ export default function FlashCard({ card }) {
                     <Button className='edit-btn'>
                         Edit
                     </Button>
-                    <Button className='delete-btn'>
-                        Delete
-                    </Button>
+                    <RemoveCardButton 
+                        className='delete-btn' 
+                        removeCard={removeCard} 
+                        card={card} 
+                    />
                 </div>
             </Card.Content>
         </Card>

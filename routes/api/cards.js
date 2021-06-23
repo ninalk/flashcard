@@ -7,6 +7,6 @@ router.post('/', cardsCtrl.create);
 router.get('/', cardsCtrl.index);
 
 /*---------- Protected Routes ----------*/
-
+router.delete('/:id', cardsCtrl.deleteCard)
 
 module.exports = router;

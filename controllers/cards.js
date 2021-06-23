@@ -2,7 +2,18 @@ const Card = require('../models/card');
 
 module.exports = {
     create,
-    index
+    index,
+    deleteCard
+}
+
+async function deleteCard(req, res) {
+    try {
+        const card = await Card.findByIdAndDelete(req.params.id);
+        res.json();
+    } catch(err) {
+        console.log(err)
+        res.send({err});
+    }
 }
 
 async function index(req, res) {

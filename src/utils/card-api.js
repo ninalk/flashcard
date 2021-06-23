@@ -22,3 +22,14 @@ export function getAll() {
     })
     .then(res => res.json());
 }
+
+export function deleteOne(cardId) {
+    return fetch(BASE_URL + `/${cardId}`, {
+        method: 'DELETE',
+        headers: {
+            'Authorization': 'Bearer ' + tokenService.getToken()
+        }
+    })
+    .then(res => res.text())
+    .then(text => console.log(text))
+}
