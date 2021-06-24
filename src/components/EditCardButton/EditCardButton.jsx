@@ -8,7 +8,6 @@ export default function EditCardButton({ card, updateCard }) {
         category: card.category,
         question: card.question,
         answer: card.answer,
-        cardId: card._id
     });  
 
     function handleChange(e){
@@ -21,12 +20,13 @@ export default function EditCardButton({ card, updateCard }) {
     function handleSubmit(e){
         // e.preventDefault()
         console.log('hitting submit')
+        const cardId = card._id;
         const formData = new FormData();
         
         for (let key in state){
             formData.append(key, state[key]);
         }
-        updateCard(state)
+        updateCard(cardId, state)
     } 
 
     return (

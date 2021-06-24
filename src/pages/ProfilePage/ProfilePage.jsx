@@ -11,6 +11,7 @@ import { useLocation, useHistory } from 'react-router-dom';
 export default function ProfilePage({ user, handleSignUpOrLogin, handleLogout }) {
     const [profileUser, setProfileUser] = useState({});
     const [cards, setCards] = useState([]);
+    // const [card, setCard] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState('');
     const location = useLocation();
@@ -54,13 +55,12 @@ export default function ProfilePage({ user, handleSignUpOrLogin, handleLogout })
         }
     }
 
-    async function updateCard(card) {
+    async function updateCard(cardId, card) {
         console.log(card, ' card in updateCard')
         try {
-            const cardId = card._id;
             const data = await cardsAPI.editCard(cardId, card);
-            setCards(data.card);
-            console.log(data, ' response from editCard')
+            // setCard(data.card);
+            // console.log(data, ' response from editCard')
         } catch(err) {
             console.log(err)
         }
