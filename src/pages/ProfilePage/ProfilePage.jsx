@@ -6,7 +6,7 @@ import PageHeader from '../../components/PageHeader/PageHeader';
 import AddCardForm from '../../components/AddCardForm/AddCardForm';
 import FlashCard from '../../components/FlashCard/FlashCard';
 import Carousel, { CarouselItem } from '../../components/Carousel/Carousel';
-import { useLocation, useHistory } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
 export default function ProfilePage({ user, handleSignUpOrLogin, handleLogout }) {
     const [profileUser, setProfileUser] = useState({});
