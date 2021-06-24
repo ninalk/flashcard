@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './EditCardButton.css';
-import { Button, Form, Grid, Header, Segment, Modal, Icon } from 'semantic-ui-react';
+import { Button, Form, Grid, Segment, Modal, Icon } from 'semantic-ui-react';
 
 export default function EditCardButton({ card, updateCard }) {
     const [open, setOpen] = React.useState(false)

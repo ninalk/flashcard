@@ -48,13 +48,12 @@ export default function AddCardForm({ handleAddCard }) {
                     onChange={handleChange}
                     required
                 />
-                <Form.Input
-                    className="form-control"
+                <Form.TextArea             
                     name="answer"
-                    value={state.answer}
                     placeholder="answer"
+                    value={state.answer}
+                    style={{ minHeight: 150 }}
                     onChange={handleChange}
-                    required
                 />
                 <Button
                     type="submit"

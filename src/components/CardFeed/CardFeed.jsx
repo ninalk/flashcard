@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Card } from 'semantic-ui-react';
+import { Card } from 'semantic-ui-react';
 import FlashCard from '../FlashCard/FlashCard';
 
 export default function CardFeed({ cards }) {
