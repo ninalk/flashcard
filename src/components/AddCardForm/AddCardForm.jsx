@@ -31,7 +31,7 @@ export default function AddCardForm({ handleAddCard }) {
         <Grid textAlign='center'>
             <Grid.Column style={{ maxWidth: 450 }}>
             <Segment>           
-                <Form  autoComplete="off" onSubmit={handleSubmit}>                
+                <Form  autoComplete="off" onSubmit={handleSubmit}>              
                 <Form.Input
                     className="form-control"
                     name="category"
@@ -52,7 +52,7 @@ export default function AddCardForm({ handleAddCard }) {
                     name="answer"
                     placeholder="answer"
                     value={state.answer}
-                    style={{ minHeight: 150 }}
+                    style={{ minHeight: 100 }}
                     onChange={handleChange}
                 />
                 <Button

@@ -15,7 +15,7 @@ export default function FlashCard({ card, removeCard, updateCard }) {
     return (
         <Card key={card._id} className='flash-card'>
             <Card.Content className='card-content'>
-                <Card.Header as='h1'>Q: {card.question}</Card.Header>
+                <Card.Header as='h1'>{card.question}</Card.Header>
                 <Divider></Divider>
                 <Card.Description>
                     {answer ? card.answer : ''}

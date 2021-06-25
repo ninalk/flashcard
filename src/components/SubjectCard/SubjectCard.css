@@ -1,3 +1,6 @@
 .subject-card {
-    height: 100px;
+    height: 120px;
+    background-color: rgb(94, 145, 75) !important;
+    border: 1.5px solid black !important;
 }
+
