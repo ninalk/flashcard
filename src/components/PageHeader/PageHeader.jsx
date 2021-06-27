@@ -23,7 +23,10 @@ export default function PageHeader({ user, handleLogout }){
             </Header>
             <Header as='h3' floated='right' className='nav-bar-link'>
                 <Link to='' onClick={handleLogout}>LOGOUT</Link>
-            </Header>              
+            </Header>
+            <Header as='h3' floated='right' className='nav-bar-link'>
+                <Link to='/new' >CREATE</Link>
+            </Header>               
             <Header as='h3' floated='right' className='nav-bar-link'>
                 <Link to={`/${user.username}`}>MY FLASHCARDS</Link>          
             </Header>       

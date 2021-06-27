@@ -3,7 +3,7 @@ const router = express.Router();
 const cardsCtrl = require('../../controllers/cards');
 
 // /*---------- Public Routes ----------*/
-router.post('/', cardsCtrl.create);
+router.post('/new', cardsCtrl.create);
 router.get('/', cardsCtrl.index);
 
 /*---------- Protected Routes ----------*/

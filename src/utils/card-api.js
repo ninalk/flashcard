@@ -4,7 +4,7 @@ const BASE_URL = '/api/cards';
 
 export function create(card) {
     console.log(card, 'in create')
-    return fetch(BASE_URL, {
+    return fetch(BASE_URL + '/new', {
         method: 'POST',
         body: JSON.stringify(card),
         headers: {

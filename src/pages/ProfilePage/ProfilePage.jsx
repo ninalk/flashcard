@@ -3,7 +3,7 @@ import userService from '../../utils/userService';
 import * as cardsAPI from '../../utils/card-api';
 import { Grid, Loader } from 'semantic-ui-react'
 import PageHeader from '../../components/PageHeader/PageHeader';
-import AddCardForm from '../../components/AddCardForm/AddCardForm';
+// import AddCardForm from '../../components/AddCardForm/AddCardForm';
 import FlashCard from '../../components/FlashCard/FlashCard';
 import Carousel, { CarouselItem } from '../../components/Carousel/Carousel';
 import { useLocation } from 'react-router-dom';
@@ -27,14 +27,14 @@ export default function ProfilePage({ user, handleSignUpOrLogin, handleLogout })
         }
     }
 
-    async function handleAddCard(card) {
-        try {
-            const data = await cardsAPI.create(card);
-            setCards(cards => [data.card, ...cards])
-        } catch(err) {
-            console.log(err)
-        }
-    }
+    // async function handleAddCard(card) {
+    //     try {
+    //         const data = await cardsAPI.create(card);
+    //         setCards(cards => [data.card, ...cards])
+    //     } catch(err) {
+    //         console.log(err)
+    //     }
+    // }
 
     async function getCards() {
         try {
@@ -86,11 +86,11 @@ export default function ProfilePage({ user, handleSignUpOrLogin, handleLogout })
                             <PageHeader profileUser={profileUser} user={user} handleLogout={handleLogout}/>
                         </Grid.Column>
                     </Grid.Row>
-                    <Grid.Row>
+                    {/* <Grid.Row>
                         <Grid.Column style={{ maxWidth: 450}}>
                             <AddCardForm handleAddCard={handleAddCard} />
                         </Grid.Column>
-                    </Grid.Row>
+                    </Grid.Row> */}
                     <Grid.Row>
                         <Grid.Column>
                             <Carousel 

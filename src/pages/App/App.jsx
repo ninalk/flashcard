@@ -5,6 +5,7 @@ import SignupPage from '../SignupPage/SignupPage';
 import LoginPage from '../LoginPage/LoginPage';
 import HomePage from '../HomePage/HomePage';
 import ProfilePage from '../ProfilePage/ProfilePage';
+import FormPage from '../FormPage/FormPage';
 import userService from '../../utils/userService'
 
 
@@ -31,6 +32,9 @@ function App() {
           </Route>
           <Route exact path="/signup">
              <SignupPage handleSignUpOrLogin={handleSignUpOrLogin}/>
+          </Route>
+          <Route exact path="/new">
+             <FormPage user={user} handleLogout={handleLogout}/>
           </Route>
           {userService.getUser() ? 
             <> 
