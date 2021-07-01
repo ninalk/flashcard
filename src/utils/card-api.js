@@ -35,7 +35,6 @@ export function deleteOne(cardId) {
 }
 
 export function editCard(cardId, card) {
-    console.log(cardId, card, ' this is the card to edit')
     return fetch(BASE_URL + `cards/${cardId}`, {
         method: 'PUT',
         body: JSON.stringify(card),
@@ -47,8 +46,7 @@ export function editCard(cardId, card) {
 }
 
 export function getCategory(category) {
-    console.log(category, ' category in card-api')
-    return fetch(BASE_URL + `/${category}`, {
+    return fetch(BASE_URL + `${category}`, {
         headers: {
           'Authorization': 'Bearer ' + tokenService.getToken()
         }
