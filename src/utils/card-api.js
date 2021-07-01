@@ -36,7 +36,7 @@ export function deleteOne(cardId) {
 
 export function editCard(cardId, card) {
     console.log(cardId, card, ' this is the card to edit')
-    return fetch(BASE_URL + `/${cardId}`, {
+    return fetch(BASE_URL + `cards/${cardId}`, {
         method: 'PUT',
         body: JSON.stringify(card),
         headers: {

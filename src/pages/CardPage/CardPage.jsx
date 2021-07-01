@@ -17,9 +17,8 @@ export default function CardPage({ user, handleLogout }) {
     async function getCardCategory() {
         try {
             const category = location.pathname.substring(1);
-            console.log(category, 'in getCardCategory')
             const data = await cardsAPI.getCategory(category);
-            console.log(data)
+            console.log(data, ' data in getCardCategory')
             setCards(data.cards);
             setLoading(false);
 
