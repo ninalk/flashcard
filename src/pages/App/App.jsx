@@ -6,6 +6,7 @@ import LoginPage from '../LoginPage/LoginPage';
 import HomePage from '../HomePage/HomePage';
 import ProfilePage from '../ProfilePage/ProfilePage';
 import FormPage from '../FormPage/FormPage';
+import CardPage from '../CardPage/CardPage';
 import userService from '../../utils/userService'
 
 
@@ -44,6 +45,9 @@ function App() {
                 </Route>
                 <Route exact path="/:username">
                     <ProfilePage user={user} handleLogout={handleLogout} handleSignUpOrLogin={handleSignUpOrLogin}/>
+                </Route>
+                <Route exact path="/cards/:category">
+                    <CardPage user={user} handleLogout={handleLogout}/>
                 </Route>
             </Switch>
             </>

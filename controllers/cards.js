@@ -4,7 +4,19 @@ module.exports = {
     create,
     index,
     deleteCard,
-    update
+    update,
+    indexCategory
+}
+
+async function indexCategory(req, res) {
+    console.log(req.body, 'hitting category in controller')
+    try {
+        const cards = await Card.find({ category: req.body.category }).populate('user').exec();
+        res.status(200).json({cards});
+    } catch(err) {
+        console.log(err)
+        res.send(err)
+    }
 }
 
 async function update(req, res) {

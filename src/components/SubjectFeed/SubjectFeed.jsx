@@ -3,8 +3,7 @@ import SubjectCard from '../../components/SubjectCard/SubjectCard';
 import { Card } from 'semantic-ui-react';
 
 export default function SubjectFeed({ cards }) {
-    const categories = [...new Set(cards.map(card => card.category.toUpperCase()))]; 
-    console.log(categories)
+    const categories = [...new Set(cards.map(card => card.category.toLowerCase()))]; 
     return (
         <Card.Group centered>
             {categories.map((category, index) => {
