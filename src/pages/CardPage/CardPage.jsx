@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './CardPage.css';
-import userService from '../../utils/userService';
 import * as cardsAPI from '../../utils/card-api';
 import { Grid, Loader } from 'semantic-ui-react'
 import PageHeader from '../../components/PageHeader/PageHeader';
-// import AddCardForm from '../../components/AddCardForm/AddCardForm';
 import FlashCard from '../../components/FlashCard/FlashCard';
 import Carousel, { CarouselItem } from '../../components/Carousel/Carousel';
 import { useLocation } from 'react-router-dom';
@@ -18,7 +16,6 @@ export default function CardPage({ user, handleLogout }) {
         try {
             const category = location.pathname.substring(1);
             const data = await cardsAPI.getCategory(category);
-            console.log(data, ' data in getCardCategory')
             setCards(data.cards);
             setLoading(false);
 

@@ -38,7 +38,7 @@ export default function ProfilePage({ user, handleSignUpOrLogin, handleLogout })
     async function removeCard(cardId) {
         try {
             const data = await cardsAPI.deleteOne(cardId);
-            console.log(data, ' response from deleteOne')
+            getCards();
         } catch(err) {
             console.log(err)
         }

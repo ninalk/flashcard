@@ -1,13 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './FormPage.css';
-import { Button, Form, Grid, Header, Segment } from 'semantic-ui-react';
+import { Grid } from 'semantic-ui-react';
 import AddCardForm from '../../components/AddCardForm/AddCardForm';
 import PageHeader from '../../components/PageHeader/PageHeader';
 import * as cardsAPI from '../../utils/card-api';
 
-export default function FormPage({ profileUser, user, handleLogout }) {
-    
-    
+export default function FormPage({ profileUser, user, handleLogout }) {   
     async function handleAddCard(card) {
         try {
             await cardsAPI.create(card);
