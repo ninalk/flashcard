@@ -5,7 +5,7 @@ import RemoveCardButton from '../RemoveCardButton/RemoveCardButton';
 import EditCardButton from '../EditCardButton/EditCardButton';
 
 
-export default function FlashCard({ card, removeCard, updateCard }) {
+export default function FlashCard({ card, removeCard, updateCard, isProfile }) {
     const [answer, setAnswer] = useState(false);
     
     function handleShowOrHideAnswer() {
@@ -21,24 +21,35 @@ export default function FlashCard({ card, removeCard, updateCard }) {
                     {answer ? card.answer : ''}
                 </Card.Description>
             </Card.Content>
-            <Card.Content extra>
-                <div className='ui three buttons'>
+            {isProfile ?
+                <Card.Content extra>
+                    <div className='ui three buttons'>
+                        <Button 
+                            className='answer-btn'
+                            onClick={() => handleShowOrHideAnswer()}
+                        >
+                        Answer
+                        </Button>
+                        <EditCardButton 
+                            updateCard={updateCard}
+                            card={card}
+                        />
+                        <RemoveCardButton 
+                            removeCard={removeCard} 
+                            card={card} 
+                        />
+                    </div>
+                </Card.Content>
+                :            
+                <Card.Content extra className='ui one buttons'>
                     <Button 
                         className='answer-btn'
                         onClick={() => handleShowOrHideAnswer()}
                     >
                     Answer
                     </Button>
-                    <EditCardButton 
-                        updateCard={updateCard}
-                        card={card}
-                    />
-                    <RemoveCardButton 
-                        removeCard={removeCard} 
-                        card={card} 
-                    />
-                </div>
-            </Card.Content>
+                </Card.Content>
+            }
         </Card>
     )
 }

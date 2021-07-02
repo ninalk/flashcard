@@ -80,6 +80,7 @@ export default function ProfilePage({ user, handleSignUpOrLogin, handleLogout })
                                 cards={cards} 
                                 removeCard={removeCard}
                                 updateCard={updateCard}
+                                isProfile={true}
                             >
                                 {cards.map((card, index) => {
                                     return (
@@ -87,12 +88,14 @@ export default function ProfilePage({ user, handleSignUpOrLogin, handleLogout })
                                             key={index} 
                                             removeCard={removeCard}
                                             updateCard={updateCard}
+                                            isProfile={true}
                                         >
                                             <FlashCard 
                                                 card={card}
                                                 key={card._id}
                                                 removeCard={removeCard}
                                                 updateCard={updateCard}
+                                                isProfile={true}
                                             />
                                         </CarouselItem>
                                     )

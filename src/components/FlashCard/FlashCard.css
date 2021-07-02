@@ -17,3 +17,7 @@
 .description, .header {
     white-space: normal;
 }
+
+.answer-content {
+    margin: 0 auto !important;
+}

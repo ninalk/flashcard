@@ -46,16 +46,19 @@ export default function CardPage({ user, handleLogout }) {
                     <Grid.Row>
                         <Grid.Column>
                             <Carousel 
-                                cards={cards} 
+                                cards={cards}
+                                isProfile={false} 
                             >
                                 {cards.map((card, index) => {
                                     return (
                                         <CarouselItem 
-                                            key={index} 
+                                            key={index}
+                                            isProfile={false} 
                                         >
                                             <FlashCard 
                                                 card={card}
                                                 key={card._id}
+                                                isProfile={false}
                                             />
                                         </CarouselItem>
                                     )
