@@ -2,7 +2,7 @@ import React from 'react';
 import './Introduction.css';
 import { Header } from 'semantic-ui-react';
 
-export default function Introduction() {
+export default function Introduction({ isHomePage }) {
 
     return (
         <Header 
@@ -11,7 +11,11 @@ export default function Introduction() {
             className='homepage-heading'
             style={{ maxWidth: 400 }}
         >
-            Welcome, explore these topics!
+            {isHomePage ? 
+                'Welcome, explore these topics!'
+                :
+                'Create your flashcards...'
+            }
         </Header>
     )
 }

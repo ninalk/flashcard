@@ -31,7 +31,7 @@ export default function HomePage({ user, handleLogout }){
             </Grid.Row>
             <Grid.Row>
                 <Grid.Column>
-                    <Introduction />
+                    <Introduction isHomePage={true} />
                 </Grid.Column>
             </Grid.Row>
             <Grid.Row>
