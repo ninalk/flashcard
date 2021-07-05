@@ -1,7 +1,7 @@
 import React from 'react';
 import './PageHeader.css';
 import { Link } from 'react-router-dom';
-import { Header, Segment } from 'semantic-ui-react';
+import { Header, Segment, Icon } from 'semantic-ui-react';
 
 
 export default function PageHeader({ user, handleLogout }){
@@ -23,7 +23,7 @@ export default function PageHeader({ user, handleLogout }){
                 </Link>
             </Header>
             <Header as='h3' floated='right' className='nav-bar-link'>
-                <Link to='' onClick={handleLogout}>LOGOUT</Link>
+                <Link to='' onClick={handleLogout}><Icon name='log out'></Icon></Link>
             </Header>
             <Header as='h3' floated='right' className='nav-bar-link'>
                 <Link to='/new' >CREATE</Link>

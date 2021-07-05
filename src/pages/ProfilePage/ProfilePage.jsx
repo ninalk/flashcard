@@ -5,6 +5,7 @@ import { Grid, Loader } from 'semantic-ui-react'
 import PageHeader from '../../components/PageHeader/PageHeader';
 import FlashCard from '../../components/FlashCard/FlashCard';
 import Carousel, { CarouselItem } from '../../components/Carousel/Carousel';
+import ShuffleButton from '../../components/ShuffleButton/ShuffleButton';
 import { useLocation } from 'react-router-dom';
 
 export default function ProfilePage({ user, handleSignUpOrLogin, handleLogout }) {
@@ -54,6 +55,14 @@ export default function ProfilePage({ user, handleSignUpOrLogin, handleLogout })
         }
     }
     
+    async function shuffleCards(cards) {
+        try {
+            setCards([...cards]);
+        } catch(err) {
+            console.log(err)
+        }
+    }
+
     useEffect(() => {
         getProfile();
         getCards();
@@ -72,6 +81,11 @@ export default function ProfilePage({ user, handleSignUpOrLogin, handleLogout })
                     <Grid.Row>
                         <Grid.Column>
                             <PageHeader profileUser={profileUser} user={user} handleLogout={handleLogout}/>
+                        </Grid.Column>
+                    </Grid.Row>
+                    <Grid.Row>
+                        <Grid.Column>
+                            <ShuffleButton cards={cards} shuffleCards={shuffleCards} />
                         </Grid.Column>
                     </Grid.Row>
                     <Grid.Row>
