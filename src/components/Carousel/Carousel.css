@@ -39,7 +39,7 @@
     height: 22px;
     border: 2px solid transparent;
     border-radius: 100px;
-    background-color: rgb(100, 168, 192);
+    cursor: pointer;
 }
 
 .chevron-left::after {
