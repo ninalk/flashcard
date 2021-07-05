@@ -4,7 +4,6 @@ import * as cardsAPI from '../../utils/card-api';
 import { Grid, Loader } from 'semantic-ui-react'
 import PageHeader from '../../components/PageHeader/PageHeader';
 import FlashCard from '../../components/FlashCard/FlashCard';
-import ShuffleButton from '../../components/ShuffleButton/ShuffleButton';
 import Carousel, { CarouselItem } from '../../components/Carousel/Carousel';
 import { useLocation } from 'react-router-dom';
 
@@ -32,7 +31,7 @@ export default function CardPage({ user, handleLogout }) {
             console.log(err)
         }
     }
-    
+
     useEffect(() => {
         getCardCategory();
     }, []);
@@ -54,14 +53,10 @@ export default function CardPage({ user, handleLogout }) {
                     </Grid.Row>
                     <Grid.Row>
                         <Grid.Column>
-                            <ShuffleButton cards={cards} shuffleCards={shuffleCards} />
-                        </Grid.Column>
-                    </Grid.Row>
-                    <Grid.Row>
-                        <Grid.Column>
                             <Carousel 
                                 cards={cards}
                                 isProfile={false} 
+                                shuffleCards={shuffleCards}
                             >
                                 {cards.map((card, index) => {
                                     return (

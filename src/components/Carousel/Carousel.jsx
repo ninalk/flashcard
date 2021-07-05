@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Carousel.css';
+import ShuffleButton from '../../components/ShuffleButton/ShuffleButton';
 import { useSwipeable } from 'react-swipeable';
 
 export const CarouselItem = ({children, width}) => {
@@ -10,7 +11,7 @@ export const CarouselItem = ({children, width}) => {
     )
 }
 
-export default function Carousel({ children, removeCard, updateCard }) {
+export default function Carousel({ children, removeCard, updateCard, shuffleCards, cards }) {
     const [activeIndex, setActiveIndex] = useState(0);
 
     const updateIndex = (newIndex) => {
@@ -50,6 +51,7 @@ export default function Carousel({ children, removeCard, updateCard }) {
                     className='chevron-right'
                 >
                 </button>
+                <ShuffleButton shuffleCards={shuffleCards} cards={cards} />
             </div>
         </div>
     )

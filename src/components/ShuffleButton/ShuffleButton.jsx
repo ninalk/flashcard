@@ -1,6 +1,6 @@
 import React from 'react';
 import './ShuffleButton.css';
-import { Button, Grid } from 'semantic-ui-react';
+import { Button, Grid, Icon } from 'semantic-ui-react';
 
 
 export default function ShuffleButton({ shuffleCards, cards }) {
@@ -16,12 +16,15 @@ export default function ShuffleButton({ shuffleCards, cards }) {
     }
 
     return (
-        <Grid centered>
+        <Grid >
             <Button 
+                icon
+                circular
+                floated='right'
                 className='shuffle-btn'
                 onClick={() => handleShuffleClick()}
             >
-                *** Shuffle Cards ***
+                <Icon name='shuffle' />
             </Button>
         </Grid>
     )
