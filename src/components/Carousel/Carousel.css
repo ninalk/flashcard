@@ -1,11 +1,13 @@
+/* Carousel is the hidden-overflow container */
 .carousel {
     overflow: hidden;
     max-width: 420px;
     margin: 0 auto;
 }
 
+/* inner helps move items around; inner and carousel.item styled to keep in one line */
 .inner {
-    white-space: nowrap;
+    white-space: nowrap; 
     transition: transform 0.3s;
 }
 
